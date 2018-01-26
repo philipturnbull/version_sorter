@@ -33,7 +33,7 @@ module VersionSorter
     n = 0
     while n < max_n
       if a[n].class == b[n].class
-        if a[n].class == Integer
+        if a[n].is_a? Numeric
           cmp = a[n] <=> b[n]
         else
           len = [a[n].length, b[n].length].min
@@ -46,15 +46,15 @@ module VersionSorter
           return cmp
         end
       else
-        return a[n].class == Integer ? 1 : -1
+        return a[n].is_a?(Numeric) ? 1 : -1
       end
       n += 1
     end
 
     if a.length < b.length
-      b[n].class == Integer ? -1 : 1
+      b[n].is_a?(Numeric) ? -1 : 1
     elsif b.length < a.length
-      a[n].class == Integer ? 1 : -1
+      a[n].is_a?(Numeric) ? 1 : -1
     else
       0
     end
