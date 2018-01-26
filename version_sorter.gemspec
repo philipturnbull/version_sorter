@@ -9,11 +9,10 @@ Gem::Specification.new do |s|
   s.homepage = 'https://github.com/github/version_sorter#readme'
   s.license  = 'MIT'
 
-  s.summary     = "Fast sorting of version strings"
-  s.description = "VersionSorter is a C extension that does fast sorting of large sets of version strings."
+  s.summary     = "Sorting of version strings"
+  s.description = "VersionSorter is a Ruby library that sorts sets of version strings."
 
-  s.files = Dir['{lib,ext}/**/*', 'LICENSE*']
-  s.extensions << 'ext/version_sorter/extconf.rb'
+  s.files = Dir['lib/**/*', 'LICENSE*']
 
   # include only files in version control
   git_dir = File.expand_path('../.git', __FILE__)
